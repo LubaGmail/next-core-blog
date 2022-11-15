@@ -4,3 +4,11 @@ Setup
         npm run build
         npm start
 
+I.  Define pages under /pages/ 
+        index.js for the HomePage, contact.js for ContactPage 
+        posts/index.js for AllPostsPage and posts/[slug].js for DetailPage
+
+II. Set generic meta in _app.js and other pages under /pages/
+    
+
+
