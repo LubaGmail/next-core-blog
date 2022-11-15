@@ -9,6 +9,6 @@ I.  Define pages under /pages/
         posts/index.js for AllPostsPage and posts/[slug].js for DetailPage
 
 II. Set generic meta in _app.js and other pages under /pages/
-    
+
 
 
