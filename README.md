@@ -10,5 +10,11 @@ I.  Define pages under /pages/
 
 II. Set generic meta in _app.js and other pages under /pages/
 
+III.    Layout 
+                components/layout/layout.js     logo.js         main-nav.js
+                wrap pages with Layout in _app.js
+
+
+
 
 

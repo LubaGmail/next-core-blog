@@ -6,7 +6,7 @@ const ContactPage = () => {
   return (
     <>
       <Head>
-        <title>Contact Luba at ll@myblogs.net</title>
+        <title>Contact Zeus at zeus@myblogs.net</title>
         <meta
           name='Contact info'
           content='ll@myblogs.net'
