@@ -14,9 +14,22 @@ III.    Layout
                 components/layout/layout.js     logo.js         main-nav.js
                 wrap pages with Layout in _app.js
 
-IV.     Posts
+IV.     Featured Posts
         HomePage        ->      FeaturedPosts                  ->      PostsGrid               ->       PostItem
         pages/index        components/home/featured-posts        components/posts/posts-grid            post-item  
 
+V.      All Posts
+        AllPostsPage    ->              AllPosts               ->      PostsGrid               ->       PostItem
+        pages/posts/index      components/posts/fall-posts     ->      PostsGrid               ->       PostItem
+
+VI.     Post Detail
+        pages/events/[slug]                
+                /components/posts/posts-detail/
+                                post-content    
+                                        post-header
+
+        /data/DUMMY_POST        single post
+        
+                
 
 

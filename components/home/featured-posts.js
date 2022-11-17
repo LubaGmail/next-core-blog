@@ -8,7 +8,7 @@ import styles from './featured-posts.module.css'
 const FeaturedPosts = () => {
 
     return (
-        <section className={styles.posts}>
+        <section>
             <h3 className='center'>Featured Posts</h3>
             <PostsGrid posts={DUMMY_POSTS} /> 
         </section>
