@@ -19,7 +19,7 @@ const MainNav = () => {
                         <Link href='/posts'>Posts</Link>      
                     </li>
                     <li>
-                        <Link href='#'>Contact</Link>      
+                        <Link href='/contact'>Contact</Link>      
                     </li>
                 </ul>      
             </nav>  

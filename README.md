@@ -31,6 +31,15 @@ VI.     Post Detail
 
         /data/DUMMY_POST        single post
         
-                
+VII.    Contact 
+                ContactPage              /pages/contact.js
+                        ContactForm      /components/contact/contact-form.js    
+
+
+
+
+
+
+
 
 
