@@ -9,6 +9,9 @@ const PostItem = ({post}) => {
     const imagePath = `/images/posts/${slug}/${image}`
     const linkPath = `posts/${slug}`
 
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const formatedDate = new Date(date).toLocaleDateString('en-US', options)
+
     return (
         <>
             <li className={styles.post}>
@@ -24,7 +27,7 @@ const PostItem = ({post}) => {
                     </div>
                     <div className={styles.content}>
                         <h3>{title}</h3>
-                        <time>{date}</time>
+                        <time>{formatedDate}</time>
                         <p>{excerpt}</p>
                     </div>
                 </Link>

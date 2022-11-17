@@ -10,7 +10,7 @@ const PostsGrid = ({posts}) => {
             <ul className={styles.grid}>
                 {
                     posts.map((el, i) => (
-                    <PostItem key={i} post={el} />
+                        <PostItem key={i} post={el} />
                     ))
                 }
             </ul>

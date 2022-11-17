@@ -1,7 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import {useRouter} from 'next/router'
 
 const DetailPage = () => {
+  const router = useRouter()
+  const query = router.query;
+  const path = router.pathname
+
   return (
     <>
       <Head>
@@ -11,7 +16,7 @@ const DetailPage = () => {
           content='individual post'
         />
       </Head>
-      DetailPage
+      DetailPage {JSON.stringify(query)} {JSON.stringify(path)}
     </>
   )
 }
