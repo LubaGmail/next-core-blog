@@ -16,7 +16,7 @@ const MainNav = () => {
             <nav>
                 <ul>
                     <li>
-                        <Link href='#'>Posts</Link>      
+                        <Link href='/posts'>Posts</Link>      
                     </li>
                     <li>
                         <Link href='#'>Contact</Link>      

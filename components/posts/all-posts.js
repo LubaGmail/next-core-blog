@@ -7,7 +7,7 @@ import styles from './all-posts.module.css'
 
 const AllPosts = () => {
   return (
-    <section>
+    <section className={styles.posts}>
         <h3 className='center'>All Posts</h3>
         <PostsGrid posts={DUMMY_POSTS} /> 
     </section>
