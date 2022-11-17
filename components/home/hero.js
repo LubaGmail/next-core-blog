@@ -16,14 +16,14 @@ const Hero = () => {
             <section className={styles.hero}>
                 <div className={styles.image}>
                     <Image
-                        src='/images/alpaca.jpg'
-                        height={300} width={300}
-                        alt='picture'
+                      src='/images/alpaca.jpg'
+                      height={300} width={300}
+                      alt='picture'
                     />
                 </div>
                 <h2>Hello! My name is Zeus and I am an alpaca</h2>
                 <p>
-                    I am a web developer who specializes in frontend frameworks
+                  I am a web developer who specializes in frontend frameworks
                 </p>
 
             </section>

@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import FeaturedPosts from '../components/home/featured-posts'
 
-import Hero from '../comments/home/hero'
+import Hero from '../components/home/hero'
 
 const HomePage = () => {
   return (
@@ -14,7 +15,9 @@ const HomePage = () => {
           content='Most popular posts'
         />
       </Head>
+
       <Hero />
+      <FeaturedPosts />
     </>
   ) 
 }
