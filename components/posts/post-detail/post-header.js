@@ -12,13 +12,13 @@ const PostHeader = (props) => {
   return (
     <header className={styles.header}>
         <h3>
-            {props.title}
+          {props.title}
         </h3>
           
         <Image src={props.image}
-            width={200}
-            height={150}
-            alt={props.title}
+          width={200}
+          height={150}
+          alt={props.title}
         />
           
     </header>

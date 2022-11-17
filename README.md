@@ -1,5 +1,6 @@
 Setup
     npx create-next-app events-app
+    npm i react-markdown                https://www.markdownguide.org/cheat-sheet/
     npx next dev
         npm run build
         npm start

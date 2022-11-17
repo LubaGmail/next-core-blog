@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import ReactMarkdown from 'react-markdown'
 
 import DUMMY_POST from '../../../data/dummy-post'
 import PostHeader from './post-header'
@@ -15,9 +16,9 @@ const PostContent = () => {
     
   return (
     <article className={styles.content}>
-        <PostHeader title={DUMMY_POST.title} image={imagePath}
-        />
-        {DUMMY_POST.content}
+      <PostHeader title={DUMMY_POST.title} image={imagePath}
+      />
+      <ReactMarkdown>{DUMMY_POST.content}</ReactMarkdown>
     </article>
   )
 }
