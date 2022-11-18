@@ -1,6 +1,8 @@
 Setup
     npx create-next-app events-app
     npm i react-markdown                https://www.markdownguide.org/cheat-sheet/
+    npm i mongodb                       update next.config.js with mongo env {}
+
     npx next dev
         npm run build
         npm start

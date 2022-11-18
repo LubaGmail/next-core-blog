@@ -4,13 +4,13 @@
     background-color: var(--color-grey-100);
     width: 90%;
     max-width: 50rem;
-    padding: var(--size-4);
+    padding: var(--size-6);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-    font-size: var(--size-6);
+    font-size: var(--size-4);
 }
-.contact h4 {
+.title {
     text-align: center;
-    font-size: var(--size-6);
+    font-size: var(--size-8);
 }
 .form label {
     display: block;
@@ -52,9 +52,18 @@
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 .form button:hover {
-    background-color: var(--color-primary-500);
-    border-color: var(--color-primary-500);
+    background-color: var(--color-primary-50);
+    border-color: var(--color-primary-50);
+    color: var(--color-grey-900);
 }
+
+.messages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: beige;
+    margin-top: 1rem;
+}
+
 @media (min-width: 768px) {
     .contact h4 {
       font-size: var(--size-16);

@@ -9,7 +9,7 @@ const CONTACT_API = '/api/contact'
 const ContactForm = () => {
     const [statusCode, setStatusCode] = useState()
     const [appStatus, setAppStatus] = useState()
-    const [errorDetail, setErrorDetail] = useState()
+    const [detail, setDetail] = useState()
 
     const [email, setEmail] = useState('')
     const [name, setName] = useState('')
@@ -35,22 +35,25 @@ const ContactForm = () => {
             setStatusCode(response.status)
             if (response.status === 201) {
                 setEmail(''); setName(''); setMessage('')
-            } 
+            } else {
+                setDetail(response.statusText)
+            }
             return response.json()
         })
         .then(data => {
             setAppStatus(data.appStatus) 
-            setErrorDetail(data.errorDetail)
+            setDetail(data.detail)
         })
     }
 
     const handleReset = () => {
         setEmail(''); setName(''); setMessage('');
+        setStatusCode(''); setAppStatus(''); setDetail('')
     }
 
     return (
         <section className={styles.contact}>
-            <h4>How Can I Help You?</h4>
+            <p className={styles.title}>How Can I Help You?</p>
 
             <form className={styles.form} onSubmit={handleSubmit} onReset={handleReset}>
 
@@ -76,10 +79,10 @@ const ContactForm = () => {
 
                 </div>
                 
-                <div className='center'>
-                    statusCode: {statusCode} &nbsp;
-                    appStatus: {appStatus} &nbsp;
-                    errorDetail:  {errorDetail} &nbsp;
+                <div className={styles.messages}>
+                    <div>statusCode: {statusCode} </div>
+                    <div>appStatus: {appStatus} </div>
+                    <div>Detail: {detail} </div>
                 </div>
 
                 <div className={styles.actions}>
