@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import styles from './contact-form.module.css'
+import Notification from '../ui/notification'
+import { APP_CLIENT_INTERNALS } from 'next/dist/shared/lib/constants'
 
 const CONTACT_API = '/api/contact'
 
@@ -15,14 +17,41 @@ const ContactForm = () => {
     const [name, setName] = useState('')
     const [message, setMessage] = useState('')
 
+    useEffect(() => {
+        if (appStatus === 'success' || appStatus === 'error') {
+          const timer = setTimeout(() => {
+            setAppStatus(null)  
+          }, 5000);
+    
+          return () => clearTimeout(timer);
+        }
+      }, [appStatus]);
+    
+    const handleReset = () => {
+        setEmail(''); setName(''); setMessage('');
+        setStatusCode(''); setAppStatus(''); setDetail('')
+    }
+
     const handleSubmit = event => {
+        event.preventDefault()
         const obj = {
             email: email,
             name: name,
             message: message
         }
+        let notification;
 
-        event.preventDefault()
+        if (appStatus === 'pending') {
+            notification = {
+                status: 'pending',
+                title: 'Sending message...',
+                message: 'Your message is on its way!',
+            };
+        }
+        sendRequest(obj)
+    }
+
+    const sendRequest = async obj => {
         fetch(CONTACT_API, {
             method: 'POST',
             body: JSON.stringify(obj),
@@ -35,6 +64,7 @@ const ContactForm = () => {
             setStatusCode(response.status)
             if (response.status === 201) {
                 setEmail(''); setName(''); setMessage('')
+                setDetail('Your message has been sent.')
             } else {
                 setDetail(response.statusText)
             }
@@ -44,11 +74,6 @@ const ContactForm = () => {
             setAppStatus(data.appStatus) 
             setDetail(data.detail)
         })
-    }
-
-    const handleReset = () => {
-        setEmail(''); setName(''); setMessage('');
-        setStatusCode(''); setAppStatus(''); setDetail('')
     }
 
     return (
@@ -78,12 +103,6 @@ const ContactForm = () => {
                     </div>
 
                 </div>
-                
-                <div className={styles.messages}>
-                    <div>statusCode: {statusCode} </div>
-                    <div>appStatus: {appStatus} </div>
-                    <div>Detail: {detail} </div>
-                </div>
 
                 <div className={styles.actions}>
                     <button type='submit'>Submit</button>  &nbsp;
@@ -91,7 +110,15 @@ const ContactForm = () => {
                 </div>  
 
             </form>
-    
+            { appStatus &&
+               (
+                    <Notification
+                        statusCode={statusCode}
+                        appStatus={appStatus}
+                        detail={detail}
+                    />
+                )
+            }
         </section>
     )
 }

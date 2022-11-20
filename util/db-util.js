@@ -4,6 +4,7 @@ const connectDb = async () => {
     const client = await MongoClient.connect(process.env.MONGO_URI)
     return client
 }
+
 const insertRecord = async (client, dbName, collName, record) => {
     const db = client.db(dbName)
     const coll = db.collection(collName)
@@ -12,12 +13,13 @@ const insertRecord = async (client, dbName, collName, record) => {
     return result
 }
 
-const getRecordsByVar = async (client, dbName, collName, query, sortParam) => {
+const getRecordsByVar = async (client, dbName, collName, query, sortParam, limit=0) => {
     const db = client.db(dbName)
     const coll = db.collection(collName)
     const cursor = await coll
         .find(query)
-        .sort(sortParam )
+        .sort(sortParam)
+        .limit(limit)
     const arr = await cursor.toArray()
    
     return arr

@@ -20,7 +20,7 @@ const handler = async (req, res)  => {
             let obj = req.body
           
             if (!validate(obj)) {
-                res.status(422).json({ appStatus: 'failure', detail: 'validation error' })
+                res.status(422).json({ appStatus: 'error', detail: 'validation error' })
                 return
             }
 
@@ -28,14 +28,14 @@ const handler = async (req, res)  => {
             try {
                 client = await connectDb()
             } catch(error) {
-                res.status(500).json({ appStatus: 'failed to connect', detail: error.toString() })
+                res.status(500).json({ appStatus: 'error', detail: error.toString() })
                 return
             }
                
             let ret
             try {
                 ret = await insertRecord(client, 'blog', 'contact', obj) 
-                res.status(201).json({appStatus: 'success', detail: ret.insertedId })
+                res.status(201).json({appStatus: 'success', detail: 'Key=' +  ret.insertedId })
             } catch (error) {
                 res.status(500).json({ appStatus: 'failed to insert', detail: error.toString() })
             }
