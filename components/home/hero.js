@@ -19,6 +19,7 @@ const Hero = () => {
                       src='/images/alpaca.jpg'
                       height={300} width={300}
                       alt='picture'
+                      priority
                     />
                 </div>
                 <h2>Hello! My name is Zeus and I am an alpaca</h2>

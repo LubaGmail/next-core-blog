@@ -12,10 +12,10 @@ const DetailPage = () => {
   return (
     <>
       <Head>
-        <title>Single Post</title>
+        <title>Single Post for {JSON.stringify(query.slug)}</title>
         <meta
           name='post'
-          content='individual post'
+          content={query.slug}
         />
       </Head>
       <PostContent />

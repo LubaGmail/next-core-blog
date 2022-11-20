@@ -22,7 +22,6 @@ const PostItem = ({post}) => {
                             width={300}
                             height={200}
                             alt={title}
-                            layout='responsive'
                         />
                     </div>
                     <div className={styles.content}>
