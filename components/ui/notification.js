@@ -17,12 +17,13 @@ function Notification(props) {
 
   const cssClasses = `${classes.notification} ${statusClasses}`;
 
-  return (
+  return ReactDOM.createPortal(
     <div className={cssClasses}>
       <p>{appStatus.toUpperCase()}</p>
       <p>{statusCode}</p>
       <p>{detail}</p>
-    </div>
+    </div>,
+    document.getElementById('notifications')
   );
 }
 
