@@ -7,43 +7,25 @@ Setup
         npm run build
         npm start
 
-I.  Define pages under /pages/ 
-        index.js for the HomePage, contact.js for ContactPage 
-        posts/index.js for AllPostsPage and posts/[slug].js for DetailPage
+`mongodb+srv://
 
-II. Set generic meta in _app.js and other pages under /pages/
+//userid:pass
+${process.env.mongodb_username}:${process.env.mongodb_password}
 
-III.    Layout 
-                components/layout/layout.js     logo.js         main-nav.js
-                wrap pages with Layout in _app.js
+//cluster
+@${process.env.mongodb_clustername}
+.ntrwp.mongodb.net/
 
-IV.     Featured Posts
-        HomePage        ->      FeaturedPosts                  ->      PostsGrid               ->       PostItem
-        pages/index        components/home/featured-posts        components/posts/posts-grid            post-item  
+?retryWrites=true&w=majority`;
 
-V.      All Posts
-        AllPostsPage    ->              AllPosts               ->      PostsGrid               ->       PostItem
-        pages/posts/index      components/posts/fall-posts     ->      PostsGrid               ->       PostItem
+'mongodb+srv://
 
-VI.     Post Detail
-        pages/events/[slug]                
-                /components/posts/posts-detail/
-                                post-content    
-                                        post-header
+//userid:pass
+m220student:perchik
 
-        /data/DUMMY_POST        single post
-        
-VII.    Contact 
-        ContactPage              /pages/contact.js
-                ContactForm      /components/contact/contact-form.js    
+//cluster
+@cluster0
+.jb7dw.mongodb.net/
 
-        /pages/api/contact      handler
-
-       
-
-
-
-
-
-
+?retryWrites=true&w=majority
 
