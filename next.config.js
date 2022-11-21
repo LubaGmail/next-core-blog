@@ -2,9 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  env: {
-    MONGO_URI: 'mongodb+srv://m220student:perchik@cluster0.jb7dw.mongodb.net/?retryWrites=true&w=majority',
-  },
+    env: {
+      mongodb_username: 'm220student',
+      mongodb_password: 'perchik',
+      mongodb_clustername: 'cluster0',
+  }
 }
 
 module.exports = nextConfig
