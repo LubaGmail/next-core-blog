@@ -5,9 +5,9 @@ import { useRouter } from 'next/router'
 import styles from './post-header.module.css'
 
 const PostHeader = (props) => {
-  const router = useRouter()
-  const query = router.query;
-  const path = router.pathname;
+  // const router = useRouter()
+  // const query = router.query;
+  // const path = router.pathname;
 
   return (
     <header className={styles.header}>

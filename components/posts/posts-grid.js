@@ -1,6 +1,3 @@
-import Head from 'next/head'
-import Image from 'next/image'
-
 import styles from './posts-grid.module.css'
 import PostItem from './post-item'
 

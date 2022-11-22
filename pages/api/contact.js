@@ -42,7 +42,7 @@ const handler = async (req, res)  => {
           
             break;
         default: 
-            console.log(method.get + ' is not implemented.')
+            console.error(method.get + ' is not implemented.')
     }
     
 }

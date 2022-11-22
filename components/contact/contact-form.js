@@ -1,10 +1,7 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
 import styles from './contact-form.module.css'
 import Notification from '../ui/notification'
-import { APP_CLIENT_INTERNALS } from 'next/dist/shared/lib/constants'
 
 const CONTACT_API = '/api/contact'
 

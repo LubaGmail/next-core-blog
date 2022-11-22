@@ -6,7 +6,7 @@ const Logo = () => {
   return (
     <>
       <div className={styles.logo}>
-        Zeus' Blog
+        Zeus Blog
       </div>
     </>
   ) 
