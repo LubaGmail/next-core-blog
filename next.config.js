@@ -1,12 +1,33 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-    env: {
-      mongodb_username: 'm220student',
-      mongodb_password: 'perchik',
-      mongodb_clustername: 'cluster0',
+
+const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
+
+module.exports = (phase) => {
+  if (phase === PHASE_DEVELOPMENT_SERVER) {
+    return {
+      env: {
+        mongo_username: 'm220student',
+        mongo_pass: 'perchik',
+        mongo_cluster: 'cluster0',
+      }
+    };
   }
+
+  return {
+    env: {
+      mongo_username: 'm220student',
+      mongo_pass: 'perchik',
+      mongo_cluster: 'cluster0',
+    }
+  }
+  
 }
 
-module.exports = nextConfig
+
+
+
+
+
+
+
+

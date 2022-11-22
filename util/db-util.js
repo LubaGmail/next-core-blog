@@ -1,7 +1,7 @@
 const MongoClient = require('mongodb').MongoClient 
 
 const MONGO_URI =
-`mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.jb7dw.mongodb.net/`
+`mongodb+srv://${process.env.mongo_username}:${process.env.mongo_pass}@${process.env.mongo_cluster}.jb7dw.mongodb.net/`
 
 const connectDb = async () => {
     const client = await MongoClient.connect(MONGO_URI)
